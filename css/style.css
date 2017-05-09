@@ -687,6 +687,14 @@ body {
     text-decoration: none;
 }
 
+.footer-logo {
+    color: #b83939;
+}
+
+.footer-logo:hover{
+    color: #963030;
+}
+
 @media screen and (max-width: 1025px) {
     .pictures .pic {
         display: none;
