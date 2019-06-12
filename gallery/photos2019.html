@@ -1,8 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>MIT Cheerleading - Photo Gallery</title>
+    <title>MIT Cheerleading - 2019 Photos</title>
     <link rel="icon" href="../css/pictures/bow.jpg">
 
     <meta charset="UTF-8">
@@ -73,40 +72,62 @@
         </div>
     </div>
     <div class="main">
-         
-    <div class="gallery">
-        <div class="top"></div>
-        <div class="bottom">
-
-            <h1> Photos </h1>
-            <br>
-
-            <div class="projects">
-            <h3><a href="./photos2013.html">Click here to see our photos from 2012-2013!</a></h3>
-            <h3><a href="./photos2014.html">Click here to see our photos from 2013-2014!</a></h3>
-            <h3><a href="./photos2015.html">Click here to see our photos from 2014-2015!</a></h3>
-            <h3><a href="./photos2016.html">Click here to see our photos from 2015-2016!</a></h3>
-            <h3><a href="./photos2017.html">Click here to see our photos from 2016-2017!</a></h3>
-            <h3><a href="./photos2018.html">Click here to see our photos from 2017-2018!</a></h3>
-            <h3><a href="./photos2019.html">Click here to see our photos from 2018-2019!</a></h3>
+        
+    <div class="home">
+        <div id="top">
+            <div class="jumbotron" id="jumbotron2019">
+                <div class="container">
+                    <h1 id="hello">MIT Cheerleading 2018-2019</h1>
+                </div>
+                <svg class="arrow">
+                   <path d="M0 0 L30 32 L60 0"></path>
+                </svg>
             </div>
-
-            <br>
-            <h1> Videos </h1>
-            <br>
-
-            <div class="projects">
-            <h3><a href="https://youtu.be/wlZOaQzJSoY">Click here to see our 2014-2015 Nationals Routine!</a></h3>
-            <h3><a href="https://youtu.be/XDNvutNmdAg">Click here to see our 2015-2016 Nationals Routine!</a></h3>
-            <h3><a href="https://youtu.be/qfZBKqTkuJA">Click here to see our 2016-2017 Nationals Routine!</a></h3>
-            <h3><a href="https://youtu.be/YA5N3Fdt7CM">Click here to see our 2018-2019 Nationals Routine!</a></h3>
-            </div>
-
-            <br>
-            <br>
-            
         </div>
-    </div>
+        <div class="bottom-container" style="padding:0px; flex-direction: column; flex: 1;">
+
+        </div>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            
+            $('#hello').fadeIn(500, function() {
+                $('.arrow').fadeIn(1000);
+            });
+            
+        });
+        </script>
+        <!--Loading the photos from the year-->
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var dir = "../css/pictures/2019/";
+                var fileextension = ".jpg";
+                var count = 0;
+                var current = 1;
+                var added = false;
+                $.ajax({
+                    //This will retrieve the contents of the folder if the folder is configured as 'browsable'
+                    url: dir,
+                    success: function (data) {
+                        $(".bottom-container").append("</div>");
+                        $(".bottom-container").append("<div id='1' style='flex:1'>");
+                            $(data).find("a").attr("href", function (i, val) {
+                            if( val.match(/\.(jpe?g|png|gif)$/) ) {
+                                var container = "#" + String(current); 
+                                $(container).append("<img src='" + dir + val + "' style='padding: 3px;'>");
+                                count += 1;
+                                added = true;
+                                if(count == 3){
+                                    count = 0;
+                                    current += 1;
+                                    $(".bottom-container").append("</div>");
+                                    $(".bottom-container").append("<div id='" + current + "'>");
+                                }
+                            }
+                        });
+                        }
+                    });
+                });
+        </script>
     </div>
 
     </div>
