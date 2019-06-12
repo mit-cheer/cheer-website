@@ -98,6 +98,26 @@ body {
     height: 55px;
 }
 
+#jumbotron2019 {
+    background: url("pictures/jumbotron2019.jpg") no-repeat center center fixed;
+    position: relative;
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    margin-bottom: 0px;
+}
+
+#jumbotron2018 {
+    background: url("pictures/jumbotron2018.jpg") no-repeat center center fixed;
+    position: relative;
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    margin-bottom: 0px;
+}
+
 #jumbotron2017 {
 	background: url("pictures/jumbotron2017.jpg") no-repeat center center fixed;
     position: relative;
