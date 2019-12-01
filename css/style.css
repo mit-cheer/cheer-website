@@ -169,7 +169,7 @@ body {
 }
 
 .home .jumbotron {
-    background: url("pictures/jumbotron.jpg") no-repeat center center fixed;
+    background: url("pictures/jumbotron.png") no-repeat center center fixed;
     position: relative;
     background-size: cover;
     -moz-background-size: cover;
