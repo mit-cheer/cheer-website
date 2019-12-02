@@ -315,7 +315,7 @@ body {
 }
 
 .skills .top {
-    background: url("pictures/officers_jumbotron.jpg") no-repeat center center fixed;
+    background: url("pictures/gallery_jumbotron.jpg") no-repeat center center fixed;
     height: 75vh;
     position: relative;
     background-size: cover;
